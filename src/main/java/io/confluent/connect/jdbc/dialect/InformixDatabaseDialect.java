@@ -21,15 +21,15 @@ import org.apache.kafka.common.config.AbstractConfig;
 //import org.apache.kafka.connect.data.Time;
 //import org.apache.kafka.connect.data.Timestamp;
 
-//import java.util.Collection;
+import java.util.Collection;
 
 import io.confluent.connect.jdbc.dialect.DatabaseDialectProvider.SubprotocolBasedProvider;
 //import io.confluent.connect.jdbc.sink.metadata.SinkRecordField;
-//import io.confluent.connect.jdbc.util.ColumnId;
-//import io.confluent.connect.jdbc.util.ExpressionBuilder;
-//import io.confluent.connect.jdbc.util.ExpressionBuilder.Transform;
+import io.confluent.connect.jdbc.util.ColumnId;
+import io.confluent.connect.jdbc.util.ExpressionBuilder;
+import io.confluent.connect.jdbc.util.ExpressionBuilder.Transform;
 import io.confluent.connect.jdbc.util.IdentifierRules;
-//import io.confluent.connect.jdbc.util.TableId;
+import io.confluent.connect.jdbc.util.TableId;
 
 /**
  * A {@link DatabaseDialect} for IBM Informix.
@@ -108,7 +108,8 @@ public class InformixDatabaseDialect extends GenericDatabaseDialect {
         return super.getSqlType(field);
     }
   }
-
+  */
+  
   @Override
   public String buildUpsertQueryStatement(
       final TableId table,
@@ -160,7 +161,7 @@ public class InformixDatabaseDialect extends GenericDatabaseDialect {
     builder.append(")");
     return builder.toString();
   }
-
+  /* 
   @Override
   protected String sanitizedUrl(String url) {
     // DB2 has semicolon delimited property name-value pairs
